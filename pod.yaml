@@ -1,0 +1,26 @@
+apiVersion: v1 
+kind: Pod 
+metadata: 
+ name: "myfirstpodoftheday" 
+ labels: 
+   app: webapp
+spec: 
+  containers:
+    - name: "myfirstcontaineroftheday"
+      image: amitkumar0441/dockerwebapp:${IMAGE_TAG}
+      ports: 
+      - containerPort: 80
+---
+apiVersion: v1 
+kind: Service 
+metadata: 
+ name: "myfirstserviceoftheday"
+spec: 
+  selector: 
+    app: webapp 
+    ports:
+    - protocol: TCP
+      port: 80           # Service port
+      targetPort: 80     # Container port
+      nodePort: 30035  # NodePort for external access
+  type: NodePort
