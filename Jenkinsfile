@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         IMAGE_TAG = "${BUILD_NUMBER}"  // Define IMAGE_TAG as an environment variable
-        KUBECONFIG = '/home/amit/.kube/config'  // Set the path for kubectl config
+        KUBECONFIG = '/home/masterserver/.kube/config'  // Set the path for kubectl config
     }
     stages {
         stage('stage01 - clean the working directory') {
