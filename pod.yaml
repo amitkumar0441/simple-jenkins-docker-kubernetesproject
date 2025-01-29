@@ -18,7 +18,7 @@ metadata:
 spec: 
   selector: 
     app: webapp 
-    ports:
+  ports:
     - protocol: TCP
       port: 80           # Service port
       targetPort: 80     # Container port
